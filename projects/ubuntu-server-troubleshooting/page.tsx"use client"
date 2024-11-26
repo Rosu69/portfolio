@@ -1,13 +1,15 @@
-"use client"
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { useSearchParams } from 'next/navigation'
-import { Suspense } from "react"
+import { useEffect, useState } from 'react'
 
-function UbuntuServerTroubleshootingContent() {
-  const searchParams = useSearchParams()
-  const returnTo = searchParams.get('returnTo') || ''
+export default function UbuntuServerTroubleshooting() {
+  const [returnTo, setReturnTo] = useState<string>('')
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    setReturnTo(params.get('returnTo') || '')
+  }, [])
 
   return (
     <div className="min-h-screen bg-[url('/images/background.jpg')] bg-cover bg-center bg-fixed">
@@ -42,14 +44,6 @@ function UbuntuServerTroubleshootingContent() {
         </div>
       </div>
     </div>
-  )
-}
-
-export default function UbuntuServerTroubleshooting() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <UbuntuServerTroubleshootingContent />
-    </Suspense>
   )
 }
 

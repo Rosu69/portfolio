@@ -3,8 +3,9 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from "react"
 
-export default function ActiveDirectoryReplication() {
+function ActiveDirectoryReplicationContent() {
   const searchParams = useSearchParams()
   const returnTo = searchParams.get('returnTo') || ''
 
@@ -45,4 +46,11 @@ export default function ActiveDirectoryReplication() {
   )
 }
 
+export default function ActiveDirectoryReplication() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ActiveDirectoryReplicationContent />
+    </Suspense>
+  )
+}
 
