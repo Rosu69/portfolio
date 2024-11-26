@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-pink: #ff6ec7;
+  --neon-blue: #00f3ff;
+  --neon-green: #39ff14;
+  --neon-purple: #9d00ff;
+}
+
+@layer base {
+  body {
+    font-family: 'VT323', monospace;
+  }
+}
+
+@layer utilities {
+  .text-neon-pink {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+  }
+  
+  .text-neon-blue {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  }
+  
+  .text-neon-green {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+  }
+
+  .text-neon-purple {
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+  }
+  
+  .bg-neon-pink {
+    background-color: var(--neon-pink);
+  }
+  
+  .bg-neon-blue {
+    background-color: var(--neon-blue);
+  }
+  
+  .bg-neon-green {
+    background-color: var(--neon-green);
+  }
+
+  .bg-neon-purple {
+    background-color: var(--neon-purple);
+  }
+}
+
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
+.animate-tilt {
+  animation: tilt 10s infinite linear;
+}
+
+
